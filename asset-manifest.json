@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/testing_octo_potato/static/css/main.0fecad66.chunk.css",
-    "main.js": "/testing_octo_potato/static/js/main.052df1b6.chunk.js",
-    "main.js.map": "/testing_octo_potato/static/js/main.052df1b6.chunk.js.map",
+    "main.css": "/testing_octo_potato/static/css/main.adb2ad56.chunk.css",
+    "main.js": "/testing_octo_potato/static/js/main.3c4c211d.chunk.js",
+    "main.js.map": "/testing_octo_potato/static/js/main.3c4c211d.chunk.js.map",
     "runtime-main.js": "/testing_octo_potato/static/js/runtime-main.6b974988.js",
     "runtime-main.js.map": "/testing_octo_potato/static/js/runtime-main.6b974988.js.map",
     "static/css/2.89e78a19.chunk.css": "/testing_octo_potato/static/css/2.89e78a19.chunk.css",
-    "static/js/2.6c322d91.chunk.js": "/testing_octo_potato/static/js/2.6c322d91.chunk.js",
-    "static/js/2.6c322d91.chunk.js.map": "/testing_octo_potato/static/js/2.6c322d91.chunk.js.map",
+    "static/js/2.9a816ab0.chunk.js": "/testing_octo_potato/static/js/2.9a816ab0.chunk.js",
+    "static/js/2.9a816ab0.chunk.js.map": "/testing_octo_potato/static/js/2.9a816ab0.chunk.js.map",
     "index.html": "/testing_octo_potato/index.html",
     "static/css/2.89e78a19.chunk.css.map": "/testing_octo_potato/static/css/2.89e78a19.chunk.css.map",
-    "static/css/main.0fecad66.chunk.css.map": "/testing_octo_potato/static/css/main.0fecad66.chunk.css.map",
-    "static/js/2.6c322d91.chunk.js.LICENSE.txt": "/testing_octo_potato/static/js/2.6c322d91.chunk.js.LICENSE.txt",
+    "static/css/main.adb2ad56.chunk.css.map": "/testing_octo_potato/static/css/main.adb2ad56.chunk.css.map",
+    "static/js/2.9a816ab0.chunk.js.LICENSE.txt": "/testing_octo_potato/static/js/2.9a816ab0.chunk.js.LICENSE.txt",
     "static/media/AboutSection.scss": "/testing_octo_potato/static/media/avatar.5d05c933.jpg",
     "static/media/Index.scss": "/testing_octo_potato/static/media/remixicon.f2616f59.ttf",
-    "static/media/App.scss": "/testing_octo_potato/static/media/bg2.f82ef93d.png",
+    "static/media/HomeSection.scss": "/testing_octo_potato/static/media/bg1.27c1462f.png",
     "static/media/logo.40c48874.svg": "/testing_octo_potato/static/media/logo.40c48874.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.6b974988.js",
     "static/css/2.89e78a19.chunk.css",
-    "static/js/2.6c322d91.chunk.js",
-    "static/css/main.0fecad66.chunk.css",
-    "static/js/main.052df1b6.chunk.js"
+    "static/js/2.9a816ab0.chunk.js",
+    "static/css/main.adb2ad56.chunk.css",
+    "static/js/main.3c4c211d.chunk.js"
   ]
 }
