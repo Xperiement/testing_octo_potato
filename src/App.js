@@ -4,18 +4,16 @@ import "./styles/WorkSection.scss";
 import "./styles/AboutSection.scss";
 import "./styles/HomeSection.scss";
 import logo from "./assets/logo.svg";
-import avatar from "./assets/avatar.jpg";
 import Splash from "./components/Splash";
 import SocialCard from "./cards/SocialCard";
 import ContactCard from "./cards/ContactCard";
-import SectionHead from "./SectionHead";
 import ProjectCard from "./cards/ProjectCard";
-import { useInView, InView } from "react-intersection-observer";
+import { InView } from "react-intersection-observer";
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import SwipeDown from "./components/SwipeDown";
 import Hamburger from "./components/Hamburger";
-import { Link, animateScroll as scroll } from "react-scroll";
+import { Link } from "react-scroll";
 import Motion from "./cards/subComponents/Motion";
 
 function App() {
@@ -26,7 +24,6 @@ function App() {
   const [showAbout, setAbout] = useState(false);
   const [showProjects, setProjects] = useState(false);
   const [showSocial, setSocial] = useState(false);
-  const [showContact, setContact] = useState(false);
 
   const hideNav = () => {
     setNav(false);
@@ -460,8 +457,8 @@ function App() {
                 <SocialCard
                   logo="ri-telegram-line"
                   heading="Send Message"
-                  expanded={true}
                   subtext="Send message into my telegram account. Kek Bye"
+                  url="https://t.me/epicX67"
                 />
               </motion.div>
 
@@ -470,6 +467,7 @@ function App() {
                   logo="ri-youtube-line"
                   heading="My Videos"
                   subtext="Check out my YT channel where I upload tutorial videos and gaming."
+                  url="https://www.youtube.com/c/epicX"
                 />
               </motion.div>
 
@@ -478,6 +476,7 @@ function App() {
                   logo="ri-github-line"
                   heading="Follow Me"
                   subtext="Follow me on github so that you can get my recent activity."
+                  url="https://github.com/epicX67"
                 />
               </motion.div>
 
@@ -486,6 +485,7 @@ function App() {
                   logo="ri-paypal-line"
                   heading="Support Plox"
                   subtext="If you like my work. Feel free to donate me. That will help a lot :)"
+                  url="https://paypal.me/epicX67"
                 />
               </motion.div>
             </motion.div>
@@ -493,7 +493,12 @@ function App() {
         </section>
       </InView>
 
-      <section id="section5" className="contact-section">
+      <section
+        id="section5"
+        className={
+          deviceType !== "mobile" ? "contact-section" : "contact-section-mobile"
+        }
+      >
         <div className="contactContainer">
           <ContactCard deviceType={deviceType} />
         </div>

@@ -7,6 +7,10 @@ export default function ContactCard({ deviceType = "mobile" }) {
   const [is_on_process, setOnProcess] = useState(false);
   const [is_on_success, setOnSuccess] = useState(false);
   const [is_on_failed, setOnFailed] = useState(false);
+
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+
   const sendMessage = async (e) => {
     const ret = true;
     e.preventDefault();
@@ -15,23 +19,50 @@ export default function ContactCard({ deviceType = "mobile" }) {
     await sleep(200);
     setOnProcess(true);
 
-    await sleep(2000);
+    await sleep(1000);
 
-    setOnProcess(false);
-    setOnFailed(!ret);
-    setOnSuccess(ret);
+    // Req
+
+    const data = document.getElementById("feedbackForm");
+    const reqData = new URLSearchParams(new FormData(data));
+
+    try {
+      const res = await fetch(
+        "https://portfoliofeedback69.herokuapp.com/send",
+        {
+          method: "post",
+          body: reqData,
+          mode: "cors",
+        }
+      );
+
+      setOnProcess(false);
+      setOnFailed(res.status === 200 ? false : true);
+      setOnSuccess(res.status === 200 ? true : false);
+    } catch {
+      setOnProcess(false);
+      setOnFailed(true);
+      setOnSuccess(false);
+    }
+
+    // Req
+
+    // setOnProcess(false);
+    // setOnFailed(!ret);
+    // setOnSuccess(ret);
 
     await sleep(1500);
 
     setOnFailed(false);
     setOnSuccess(false);
 
-    console.log(ret ? "Success" : "Failed");
-
     // Show Result
 
     // Then delay
     await sleep(1000);
+
+    setName("");
+    setMessage("");
 
     //Go back to idle
     setIdle(true);
@@ -44,6 +75,7 @@ export default function ContactCard({ deviceType = "mobile" }) {
           : "contactForm"
       }
       onSubmit={(e) => sendMessage(e)}
+      id="feedbackForm"
     >
       <motion.div
         className="sContainer"
@@ -121,9 +153,17 @@ export default function ContactCard({ deviceType = "mobile" }) {
           placeholder="Your name"
           type="text"
           name="name"
-          id="user_name"
+          id="fName"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
         ></input>
-        <textarea placeholder="Write your message"></textarea>
+        <textarea
+          id="fMessage"
+          name="message"
+          placeholder="Write your message"
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
+        ></textarea>
         <input type="submit" value="Send" />
       </div>
     </form>

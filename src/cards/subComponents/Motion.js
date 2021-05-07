@@ -22,8 +22,8 @@ export default function Motion() {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(150 150) rotate(10) scale(150)"
         >
-          <stop offset="0.119792" stop-color="#5E81FF" />
-          <stop offset="1" stop-color="#65DBB4" />
+          <stop offset="0.119792" stopColor="#5E81FF" />
+          <stop offset="1" stopColor="#65DBB4" />
         </radialGradient>
       </defs>
     </svg>

@@ -1,12 +1,14 @@
 import React from "react";
 import "../styles/SwipeDown.scss";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-scroll";
 
 export default function SwipeDown({ deviceType }) {
   return (
     <Link
-      className="swipeDown"
+      className={`swipeDown ${
+        deviceType === "mobile" ? "swipe-down-mobile" : ""
+      }`}
       delay={0}
       to="section2"
       offset={deviceType !== "mobile" ? -200 : 0}

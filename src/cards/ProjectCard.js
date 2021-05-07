@@ -1,4 +1,5 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
+// import {useEffect} from "react"
 import { AnimatePresence, motion } from "framer-motion";
 import NumberSelectors from "./subComponents/NumberSelectors";
 import Shrp from "./subComponents/Shrp";
@@ -144,6 +145,7 @@ export default function ProjectCard({ deviceType }) {
               onClick={() => changeCard(item.title, cards.indexOf(item))}
               number={++i}
               active={item.show}
+              key={item.title + i}
             />
           );
         })}
@@ -152,6 +154,7 @@ export default function ProjectCard({ deviceType }) {
         <i
           onClick={() => previousCard()}
           className="ri-arrow-left-s-line m-btn prev"
+          key="prevBtn"
         ></i>
         <AnimatePresence>
           <motion.div
@@ -182,6 +185,7 @@ export default function ProjectCard({ deviceType }) {
                       className={`${cards[pos].color}-a`}
                       href={item.url}
                       target="blank"
+                      key={item.url}
                     >
                       {item.name}
                     </a>
@@ -198,6 +202,7 @@ export default function ProjectCard({ deviceType }) {
         <i
           onClick={() => nextCard()}
           className="ri-arrow-right-s-line m-btn next"
+          key="nextBtn"
         ></i>
       </div>
     </>
