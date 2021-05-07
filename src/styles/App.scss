@@ -38,7 +38,7 @@ nav {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 99999999;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -220,7 +220,7 @@ nav {
 .hamburger {
   fill: var(--clr-txtM);
   width: 5rem;
-  z-index: 1000000;
+  z-index: 99999999;
   cursor: pointer;
   position: absolute;
   right: 0.5rem;
@@ -228,7 +228,7 @@ nav {
 
 .mobile-nav-container {
   position: fixed;
-  z-index: 3;
+  z-index: 9999999;
 
   top: 0;
   width: 100vw;
@@ -287,13 +287,36 @@ nav {
   }
 }
 
+.head-container-mobile {
+  height: min-content;
+  padding: 0rem 4rem;
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  //background: blue;
+  * {
+    text-align: center;
+  }
+
+  .section-head {
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 5px;
+    }
+    p {
+      color: var(--clr-txtS);
+      font-weight: 300;
+    }
+  }
+}
+
 .splash {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: 9999999;
+  z-index: 99999999999;
   background: var(--clr-accM);
   pointer-events: none;
 

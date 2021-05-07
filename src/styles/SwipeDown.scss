@@ -13,6 +13,9 @@
   button {
     width: 1.5rem;
     aspect-ratio: 3/6;
+    @supports not (aspect-ratio: 3 / 6) {
+      height: 1.5rem / 3 * 6;
+    }
     border: 3px solid var(--clr-txtM);
     border-radius: 1000px;
     background: transparent;
@@ -24,7 +27,11 @@
 
     div {
       width: 100%;
-      aspect-ratio: 1/1;
+      aspect-ratio: 1 / 1;
+      @supports not (aspect-ratio: 1 / 1) {
+        height: 0.6rem;
+      }
+
       background: var(--clr-txtM);
       border-radius: 100%;
     }

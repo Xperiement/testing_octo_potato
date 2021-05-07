@@ -85,13 +85,13 @@ export default function ProjectCard({ deviceType }) {
 
   let i = 0;
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      nextCard();
-    }, 5000);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     nextCard();
+  //   }, 5000);
 
-    return () => clearTimeout(timer);
-  });
+  //   return () => clearTimeout(timer);
+  // });
 
   const changeCard = async (title, p) => {
     const newState = cards.map((item) => {

@@ -54,7 +54,7 @@ function App() {
       transition: {
         duration: 1,
         type: "tween",
-        staggerChildren: 0.1,
+        staggerChildren: 0.2,
       },
     },
   };
@@ -68,7 +68,7 @@ function App() {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 1.5,
+        duration: 1,
       },
     },
   };
@@ -124,7 +124,7 @@ function App() {
 
   return (
     <>
-      {/* <Splash width={width} /> */}
+      <Splash width={width} />
       <AnimatePresence>
         {true ? (
           <motion.nav
@@ -284,7 +284,9 @@ function App() {
             <span className="separator">Student</span>{" "}
             <span className="separator">.</span> Noob Gamer
           </p>
-          <AnimatePresence>{showSlider ? <SwipeDown /> : null}</AnimatePresence>
+          <AnimatePresence>
+            {showSlider ? <SwipeDown deviceType={deviceType} /> : null}
+          </AnimatePresence>
         </section>
       </InView>
 
@@ -367,7 +369,13 @@ function App() {
           id="section3"
           className="work-section"
         >
-          <div className="head-container">
+          <div
+            className={
+              deviceType !== "mobile"
+                ? "head-container"
+                : "head-container-mobile"
+            }
+          >
             <div className="section-head">
               <h1>Projects</h1>
               <p>Here are some of my projects which I done recently</p>
@@ -397,7 +405,13 @@ function App() {
       >
         <section id="section4" className="social_section">
           {/* <SectionHead sectionName="WorkZ" /> */}
-          <div className="head-container">
+          <div
+            className={
+              deviceType !== "mobile"
+                ? "head-container"
+                : "head-container-mobile"
+            }
+          >
             <div className="section-head">
               <h1>Social</h1>
               <p>Connect with me though social media</p>

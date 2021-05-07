@@ -3,13 +3,13 @@ import "../styles/SwipeDown.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
 
-export default function SwipeDown() {
+export default function SwipeDown({ deviceType }) {
   return (
     <Link
       className="swipeDown"
       delay={0}
       to="section2"
-      offset={-200}
+      offset={deviceType !== "mobile" ? -200 : 0}
       smooth={true}
       duration={200}
     >

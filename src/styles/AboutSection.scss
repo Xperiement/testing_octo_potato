@@ -55,6 +55,10 @@
       max-width: 200px;
       margin-left: 150px;
       aspect-ratio: 3 / 4;
+
+      @supports not (aspect-ratio: 3 / 4) {
+        height: 100% * 3.5 / 4;
+      }
       background-image: url("../assets/avatar.jpg");
       background-position: center;
       background-size: cover;
@@ -138,6 +142,9 @@
       width: 100%;
       max-width: 280px;
       aspect-ratio: 4 / 3;
+      @supports not (aspect-ratio: 4 / 3) {
+        height: 13rem;
+      }
       background-image: url("../assets/avatar.jpg");
       background-position: center;
       background-size: 120%;
