@@ -73,6 +73,36 @@ function App() {
     },
   };
 
+  const navVariants = {
+    hidden: { y: -10, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 1.6,
+        duration: 1,
+        type: "tween",
+        staggerChildren: 0.5,
+      },
+    },
+  };
+
+  const navItemVariants = {
+    hidden: {
+      y: -100,
+      opacity: 0,
+    },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+        type: "tween",
+        ease: "easeOut",
+      },
+    },
+  };
+
   // const [showNav, setNav] = useState(true);
 
   // const [scrollDir, setScrollDir] = useState("scrolling down");
@@ -128,61 +158,63 @@ function App() {
       <AnimatePresence>
         {true ? (
           <motion.nav
-            initial={{ y: -10, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{
-              type: "tween",
-              ease: "easeOut",
-            }}
-            exit={{
-              y: -10,
-              opacity: 0,
-            }}
+            initial="hidden"
+            animate="show"
+            variants={navVariants}
+            exit="hidden"
             className={`${deviceType === "mobile" ? "mobile-nav" : ""}`}
           >
             {deviceType !== "mobile" ? (
               <>
-                <Link
-                  to="section2"
-                  smooth={true}
-                  offset={-200}
-                  spy={true}
-                  duration={400}
-                  delay={0}
-                >
-                  <button>About</button>
-                </Link>
+                <motion.div variants={navItemVariants}>
+                  <Link
+                    to="section2"
+                    smooth={true}
+                    offset={-200}
+                    spy={true}
+                    duration={400}
+                    delay={0}
+                  >
+                    <button>About</button>
+                  </Link>
+                </motion.div>
 
-                <Link
-                  to="section3"
-                  smooth={true}
-                  spy={true}
-                  duration={400}
-                  delay={0}
-                >
-                  <button>Workz</button>
-                </Link>
+                <motion.div variants={navItemVariants}>
+                  <Link
+                    to="section3"
+                    smooth={true}
+                    spy={true}
+                    duration={400}
+                    delay={0}
+                  >
+                    <button>Workz</button>
+                  </Link>
+                </motion.div>
 
-                <Link
-                  to="section4"
-                  smooth={true}
-                  offset={-50}
-                  spy={true}
-                  duration={400}
-                  delay={0}
-                >
-                  <button>Social</button>
-                </Link>
+                <motion.div variants={navItemVariants}>
+                  <Link
+                    to="section4"
+                    smooth={true}
+                    offset={-50}
+                    spy={true}
+                    duration={400}
+                    delay={0}
+                  >
+                    <button>Social</button>
+                  </Link>
+                </motion.div>
 
-                <Link
-                  to="section5"
-                  smooth={true}
-                  spy={true}
-                  duration={400}
-                  delay={0}
-                >
-                  <button>Contact</button>
-                </Link>
+                <motion.div variants={navItemVariants}>
+                  <Link
+                    to="section5"
+                    smooth={true}
+                    spy={true}
+                    duration={400}
+                    delay={0}
+                  >
+                    <button>Contact</button>
+                  </Link>
+                </motion.div>
               </>
             ) : (
               <Hamburger
