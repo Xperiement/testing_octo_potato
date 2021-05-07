@@ -2,6 +2,8 @@ import { React, useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import NumberSelectors from "./subComponents/NumberSelectors";
 import Shrp from "./subComponents/Shrp";
+import Ncloud from "./subComponents/Ncloud";
+import Krunkercss from "./subComponents/Krunkercss";
 import { sleep } from "../utils/utils";
 
 export default function ProjectCard({ deviceType }) {
@@ -10,60 +12,72 @@ export default function ProjectCard({ deviceType }) {
 
   const [cards, setCard] = useState([
     {
-      title: "Title 1",
+      title: "SHRP",
       info:
         "Skyhawk recovery project (SHRP) is a android custom recovery project which is based on Letest TWRP.",
-      logo: <Shrp />,
+      logo: <Shrp className="blue" />,
       show: true,
       color: "blue",
       btns: [
         {
-          name: "Download",
-          url: "google.com",
+          name: "Visit",
+          url: "https://skyhawkrecovery.github.io/",
         },
         {
-          name: "Source",
-          url: "google.com",
+          name: "Source Code",
+          url: "https://github.com/SHRP",
         },
       ],
     },
 
     {
-      title: "Title 2",
-      info: "A detailed Explanation 2",
-      logo: null,
+      title: "Project Ncloud",
+      info:
+        "Scalable Network Attached Storage system for raspberry pi and for other linux distros",
+      logo: <Ncloud className="red" />,
       show: false,
       color: "red",
       btns: [
         {
-          name: "Download",
-          url: "google.com",
+          name: "Get started",
+          url:
+            "https://github.com/project-ncloud/get_started/blob/main/README.md",
         },
-      ],
-    },
-    {
-      title: "Title 3",
-      info: "A detailed Explanation 3",
-      logo: null,
-      show: false,
-      color: "green",
-      btns: [
         {
-          name: "Download",
-          url: "google.com",
+          name: "Source code",
+          url: "https://github.com/project-ncloud",
         },
       ],
     },
+    // {
+    //   title: "SS",
+    //   info: "A detailed Explanation 3",
+    //   logo: null,
+    //   show: false,
+    //   color: "green",
+    //   btns: [
+    //     {
+    //       name: "Download",
+    //       url: "google.com",
+    //     },
+    //   ],
+    // },
     {
-      title: "Title 4",
-      info: "A detailed Explanation4",
-      logo: null,
+      title: "MOF1 Krunker CSS",
+      info: "Unique krunker CSS for krunker official client & chrome.",
+      logo: <Krunkercss className="yellow" />,
       show: false,
       color: "yellow",
       btns: [
         {
+          name: "Guide",
+          url:
+            "https://github.com/epicX67/documents_KrunkerResourceSwapper/blob/master/README.md",
+        },
+        {
           name: "Download",
-          url: "google.com",
+          url:
+            "https://github.com/epicX67/documents_KrunkerResourceSwapper/archive/refs/heads/master.zip",
         },
       ],
     },
@@ -71,13 +85,13 @@ export default function ProjectCard({ deviceType }) {
 
   let i = 0;
 
-  // useEffect(() => {
-  //   const timer = setTimeout(() => {
-  //     nextCard();
-  //   }, 5000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      nextCard();
+    }, 5000);
 
-  //   return () => clearTimeout(timer);
-  // });
+    return () => clearTimeout(timer);
+  });
 
   const changeCard = async (title, p) => {
     const newState = cards.map((item) => {
@@ -143,13 +157,13 @@ export default function ProjectCard({ deviceType }) {
           <motion.div
             className={`project-card ${cards[pos].color}-bg`}
             initial={{
-              x: isRight ? "-20%" : "20%",
+              x: isRight ? "-50%" : "50%",
               opacity: 0,
               position: "absolute",
             }}
             animate={{ x: 0, opacity: 1, position: "absolute" }}
             exit={{
-              x: isRight ? "20%" : "-20%",
+              x: isRight ? "50%" : "-50%",
               opacity: 0,
               position: "absolute",
             }}

@@ -205,7 +205,8 @@ $card-Ttype: 500ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
       position: relative;
       background: var(--clr-bg);
       width: $cardSize;
-      aspect-ratio: 34/46;
+      // aspect-ratio: 34/46;
+      height: $cardSize / 34 * 46;
       border-radius: $borderRadius;
 
       &:hover {

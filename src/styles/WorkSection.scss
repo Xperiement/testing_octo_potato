@@ -90,7 +90,8 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
           .btn-container {
             opacity: 1;
             pointer-events: auto;
-            transition: opacity 1080ms 200ms ease;
+            transition: opacity 1080ms 500ms ease,
+              pointer-events 1080ms 500ms ease;
           }
         }
       }
@@ -119,7 +120,8 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
           .btn-container {
             opacity: 1;
             pointer-events: auto;
-            transition: opacity 1080ms 200ms ease;
+            transition: opacity 1080ms 200ms ease,
+              pointer-events 1080ms 200ms ease;
           }
         }
 
@@ -131,6 +133,7 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
           width: 50%;
           max-height: 8rem;
           aspect-ratio: 1/1.2;
+          height: 50% * 1.2;
           border-radius: $bRX;
           background: linear-gradient(
             to top right,
@@ -148,9 +151,9 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
             top: 50%;
             transform: translate(0%, -50%);
             right: -10%;
-            width: 90%;
-            height: 75%;
-            //aspect-ratio: 1/1;
+            width: 5.8rem;
+            height: 5.8rem;
+
             border: 6px solid var(--clr-accM);
             border-radius: 1000px;
             background: var(--clr-bg);
@@ -190,7 +193,7 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
           gap: 1rem;
           opacity: 0;
           pointer-events: none;
-          transition: opacity 480ms ease, pointer-events 280ms 200ms ease;
+          transition: opacity 480ms ease, pointer-events 200ms ease;
           a {
             user-select: none;
             color: var(--clr-accM);
@@ -356,7 +359,8 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
           .btn-container {
             opacity: 1;
             pointer-events: auto;
-            transition: opacity 1080ms 200ms ease;
+            transition: opacity 1080ms 500ms ease,
+              pointer-events 1080ms 1000ms ease;
           }
         }
       }
@@ -445,7 +449,7 @@ $Ttype: 580ms 100ms cubic-bezier(0.87, 0.07, 0.37, 0.97);
 
           opacity: 0;
           pointer-events: none;
-          transition: opacity 480ms ease, pointer-events 280ms 200ms ease;
+          transition: opacity 480ms ease, pointer-events 200ms ease;
           a {
             user-select: none;
             color: var(--clr-accM);

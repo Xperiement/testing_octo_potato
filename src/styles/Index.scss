@@ -19,6 +19,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 * {
@@ -77,6 +78,7 @@ section {
 }
 
 .blue {
+  fill: var(--clr-accM) !important;
   color: var(--clr-accM) !important;
 }
 
@@ -90,6 +92,7 @@ section {
 }
 
 .red {
+  fill: var(--clr-acc3) !important;
   color: var(--clr-acc3) !important;
 }
 
@@ -103,6 +106,7 @@ section {
 }
 
 .green {
+  fill: var(--clr-acc2) !important;
   color: var(--clr-acc2) !important;
 }
 
@@ -116,5 +120,45 @@ section {
 }
 
 .yellow {
+  fill: var(--clr-acc4) !important;
   color: var(--clr-acc4) !important;
+}
+
+footer {
+  $logoSize: 1.5rem;
+  height: 4.5rem;
+  background: var(--clr-bg);
+  filter: brightness(1.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  a {
+    display: block;
+    width: $logoSize;
+  }
+
+  svg {
+    width: $logoSize;
+    height: $logoSize;
+    filter: brightness(1.2);
+  }
+  i {
+    font-size: $logoSize + 0.5rem;
+  }
+
+  .remix {
+    color: var(--clr-acc3);
+  }
+  .react {
+    color: var(--clr-accM);
+  }
+
+  p {
+    height: $logoSize;
+    font-size: 0.9rem;
+    color: var(--clr-txtS);
+    user-select: none;
+  }
 }

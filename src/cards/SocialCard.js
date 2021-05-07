@@ -1,14 +1,8 @@
 import React from "react";
 
-export default function SocialCard({
-  logo,
-  heading,
-  subtext,
-  expanded = false,
-  color,
-}) {
+export default function SocialCard({ logo, heading, subtext }) {
   return (
-    <div className="socialCard">
+    <div className="socialCard" initial="hidden" animate="show">
       <div className="mContainer">
         <h1>{heading}</h1>
         <p>{subtext}</p>

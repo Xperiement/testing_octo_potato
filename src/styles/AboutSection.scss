@@ -161,17 +161,15 @@
     }
   }
   & > :nth-child(2) {
-    // background-color: lightcoral;
-    div {
-    }
-
+    //background-color: lightcoral;
+    padding: 1rem 3rem;
     h1 {
       margin-bottom: 0.6rem;
       font-size: 2.5em;
     }
 
     p {
-      max-width: 35ch;
+      max-width: 33ch;
       color: var(--clr-txtS);
       line-height: 2rem;
       word-spacing: 2px;
